@@ -14,10 +14,10 @@
                 console.log(points);
             };
             
-            if (isNumeric(localStorage.getItem("points"))) {
-                points = parseInt(localStorage.getItem("points"));
-            } else {
+            if (isNaN(localStorage.getItem("points"))) {
                 points = 0;
+            } else {
+                points = parseInt(localStorage.getItem("points"));
             }    
             console.log(points);
         </script>
