@@ -14,11 +14,11 @@
             tbl.style.width = '100%';
             tbl.setAttribute('border', '1');
             var tbdy = document.createElement('tbody');
-            for (var i = 0; i < list.length; i++) {
+            for (var col = 0; col < list.length; col++) {
                 var tr = document.createElement('tr');
-                for (var j = 0; j < list[0].length; j++) {
+                for (var row = 0; row < list[0].length; row++) {
                     var td = document.createElement('td');
-                    td.appendChild(document.createTextNode('\u0020'))
+                    td.appendChild(document.createTextNode(list[col][row])
                     tr.appendChild(td)
                 }
                 tbdy.appendChild(tr);
