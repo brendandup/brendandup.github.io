@@ -23,11 +23,11 @@
         <script>
             var nbFriends = 73;
             var categories = ["ID", "Name", "Height" , "Width", "Gender", "Handedness", "Attack", "Defense", "Speed", "Health", "Magic", "Strength", "Intelligence", "Combo Damage", "Agility", "Eyesight"];
-            var items;
+            var items = [];
             if (isNaN(localStorage.getItem("items"))) {
                 for (var col = 0; col < categories.length; col++) {
                     for (var row = 0; col < nbFriends; row++) {
-                        items[col][row] = "a";
+                        items[col][row] = [];
                     }
                 }
             } else {
