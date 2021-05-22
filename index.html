@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <title>test</title>
         <style>
+            table {
+                width: 100%;
+            }
             table, th, td {
                 border: 1px solid black;
                 border-collapse: collapse;
@@ -16,27 +19,36 @@
     <body>
         
         <script>
-            var list = [["Fluffy", 0, 0, 0], ["Baby Bunny", 0, 0, 0], ["Gaga Bunny", 0, 0, 0]];
+            var heads = ["ID", "Name", "Height" , "Width", "Gender", "Handedness", "Attack", "Defense", "Speed", "Health", "Magic", "Strength", "Intelligence", "Combo Damage", "Agility", "Eyesight"];
+            var bodies = [["Fluffy", 0, 0, 0], ["Baby Bunny", 0, 0, 0], ["Gaga Bunny", 0, 0, 0]];
             
             var body = document.getElementsByTagName('body')[0];
             var tbl = document.createElement('table');
-            tbl.style.width = '100%';
-            tbl.setAttribute('border', '1');
+            
+            var thd = document.createElement('thead');
+            var tr = document.createElement('tr');
+            for (var col = 0; col < heads.length; col++) {
+                var th = document.createElement('th');
+                th.appendChild(document.createTextNode(heads[col]));
+                tr.appendChild(th);
+            thd.appendChild(tr);
+            tbl.appendChild(tbdy);
+            
             var tbdy = document.createElement('tbody');
-            for (var col = 0; col < list.length; col++) {
+            for (var col = 0; col < bodies.length; col++) {
                 var tr = document.createElement('tr');
-                for (var row = 0; row < list[0].length; row++) {
+                for (var row = 0; row < bodies[0].length; row++) {
                     var td = document.createElement('td');
                     var input = document.createElement('input');
                     input.readOnly = true;
-                    input.value = list[col][row];
-                    td.appendChild(input)
-                    tr.appendChild(td)
+                    input.value = bodies[col][row];
+                    td.appendChild(input);
+                    tr.appendChild(td);
                 }
                 tbdy.appendChild(tr);
             }
             tbl.appendChild(tbdy);
-            body.appendChild(tbl)
+            body.appendChild(tbl);
         </script>
     </body>
 </html>
