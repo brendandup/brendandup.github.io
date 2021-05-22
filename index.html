@@ -24,13 +24,7 @@
             var nbFriends = 73;
             var categories = ["ID", "Name", "Height" , "Width", "Gender", "Handedness", "Attack", "Defense", "Speed", "Health", "Magic", "Strength", "Intelligence", "Combo Damage", "Agility", "Eyesight"];
             if (isNaN(localStorage.getItem("items"))) {
-                var items = [];
-                for (var row = 0; row < categories.length; row++) {
-                    items[row] = [];
-                    for (var col = 0; col < nbFriends; col++) {
-                        items[row][col] = "a";
-                    }
-                }
+                var items = Array.from(Array(nbFriends), => new Array(categories.length));
                 console.log(items);
             } else {
                 var items = localStorage.getItem("items");
