@@ -7,6 +7,8 @@
             table {
                 width: 100%;
             }
+            td {
+                height: 14px;
             table, th, td {
                 border: 1px solid black;
                 border-collapse: collapse;
@@ -19,30 +21,41 @@
     <body>
         
         <script>
-            var heads = ["ID", "Name", "Height" , "Width", "Gender", "Handedness", "Attack", "Defense", "Speed", "Health", "Magic", "Strength", "Intelligence", "Combo Damage", "Agility", "Eyesight"];
-            var bodies = [["Fluffy", 0, 0, 0], ["Baby Bunny", 0, 0, 0], ["Gaga Bunny", 0, 0, 0]];
+            var nbFriends = 73;
+            var categories = ["ID", "Name", "Height" , "Width", "Gender", "Handedness", "Attack", "Defense", "Speed", "Health", "Magic", "Strength", "Intelligence", "Combo Damage", "Agility", "Eyesight"];
+            var items;
+            if (isNaN(localStorage.getItem("items"))) {
+                for (var col = 0; col < categories.length; col++) {
+                    for (var row = 0; col < nbFriends; row++) {
+                        items[col][row] = "";
+                    }
+                }
+            } else {
+                items = localStoage.getItem("items")
+            }
+            console.log(items);
             
             var body = document.getElementsByTagName('body')[0];
             var tbl = document.createElement('table');
             
             var thd = document.createElement('thead');
             var tr = document.createElement('tr');
-            for (var col = 0; col < heads.length; col++) {
+            for (var col = 0; col < categories.length; col++) {
                 var th = document.createElement('th');
-                th.appendChild(document.createTextNode(heads[col]));
+                th.appendChild(document.createTextNode(categoies[col]));
                 tr.appendChild(th);
             }
             thd.appendChild(tr);
             tbl.appendChild(thd);
             
             var tbdy = document.createElement('tbody');
-            for (var col = 0; col < bodies.length; col++) {
+            for (var col = 0; col < items.length; col++) {
                 var tr = document.createElement('tr');
-                for (var row = 0; row < bodies[0].length; row++) {
+                for (var row = 0; row < items[0].length; row++) {
                     var td = document.createElement('td');
                     var input = document.createElement('input');
                     input.readOnly = true;
-                    input.value = bodies[col][row];
+                    input.value = items[col][row];
                     td.appendChild(input);
                     tr.appendChild(td);
                 }
