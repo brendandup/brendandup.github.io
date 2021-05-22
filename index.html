@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <title>test</title>
         <style>
-            table, tr {
+            table, th, td {
                 border: 1px solid black;
+                border-collapse: collapse;
             }
             input {
                 border: none;
@@ -27,7 +28,7 @@
                 for (var row = 0; row < list[0].length; row++) {
                     var td = document.createElement('td');
                     var input = document.createElement('input');
-                    input.type = "readonly";
+                    input.readOnly = true;
                     input.value = list[col][row];
                     td.appendChild(input)
                     tr.appendChild(td)
