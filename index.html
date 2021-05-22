@@ -23,15 +23,16 @@
         <script>
             var nbFriends = 73;
             var categories = ["ID", "Name", "Height" , "Width", "Gender", "Handedness", "Attack", "Defense", "Speed", "Health", "Magic", "Strength", "Intelligence", "Combo Damage", "Agility", "Eyesight"];
-            var items = [];
             if (isNaN(localStorage.getItem("items"))) {
-                for (var col = 0; col < categories.length; col++) {
-                    for (var row = 0; col < nbFriends; row++) {
-                        items[col][row] = [];
+                var items = [];
+                for (var row = 0; row < categories.length; row++) {
+                    items[row] = [];
+                    for (var col = 0; col < nbFriends; col++) {
+                        items[row][col] = null;
                     }
                 }
             } else {
-                items = localStorage.getItem("items")
+                var items = localStorage.getItem("items");
             }
             console.log(items);
             
@@ -49,13 +50,13 @@
             tbl.appendChild(thd);
             
             var tbdy = document.createElement('tbody');
-            for (var col = 0; col < items.length; col++) {
+            for (var row = 0; row < items.length; row++) {
                 var tr = document.createElement('tr');
-                for (var row = 0; row < items[0].length; row++) {
+                for (var col = 0; col < items[0].length; col++) {
                     var td = document.createElement('td');
                     var input = document.createElement('input');
                     input.readOnly = true;
-                    input.value = items[col][row];
+                    input.value = items[row][col];
                     td.appendChild(input);
                     tr.appendChild(td);
                 }
