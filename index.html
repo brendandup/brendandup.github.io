@@ -19,7 +19,7 @@
                 for (var row = 0; row < list[0].length; row++) {
                     var td = document.createElement('td');
                     var input = document.createElement('input');
-                    input.appendChild(document.createTextNode(list[col][row]))
+                    input.value = list[col][row];
                     td.appendChild(input)
                     tr.appendChild(td)
                 }
