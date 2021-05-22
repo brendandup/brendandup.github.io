@@ -27,7 +27,7 @@
             if (isNaN(localStorage.getItem("items"))) {
                 for (var col = 0; col < categories.length; col++) {
                     for (var row = 0; col < nbFriends; row++) {
-                        items[col][row] = "";
+                        items[col][row] = "a";
                     }
                 }
             } else {
@@ -42,7 +42,7 @@
             var tr = document.createElement('tr');
             for (var col = 0; col < categories.length; col++) {
                 var th = document.createElement('th');
-                th.appendChild(document.createTextNode(categoies[col]));
+                th.appendChild(document.createTextNode(categories[col]));
                 tr.appendChild(th);
             }
             thd.appendChild(tr);
