@@ -31,8 +31,9 @@
                 var th = document.createElement('th');
                 th.appendChild(document.createTextNode(heads[col]));
                 tr.appendChild(th);
+            }
             thd.appendChild(tr);
-            tbl.appendChild(tbdy);
+            tbl.appendChild(thd);
             
             var tbdy = document.createElement('tbody');
             for (var col = 0; col < bodies.length; col++) {
