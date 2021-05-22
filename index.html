@@ -18,7 +18,9 @@
                 var tr = document.createElement('tr');
                 for (var row = 0; row < list[0].length; row++) {
                     var td = document.createElement('td');
-                    td.appendChild(document.createTextNode(list[col][row]))
+                    var input = document.createElement('input');
+                    input.appendChild(document.createTextNode(list[col][row]))
+                    td.appendChild(input)
                     tr.appendChild(td)
                 }
                 tbdy.appendChild(tr);
