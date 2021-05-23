@@ -17,9 +17,7 @@
         </style>
     </head>
     <body>
-        
-        <script>
-            var nbFriends = 73;
+        <script>var nbFriends = 73;
             var categories = ["ID", "Name", "Height" , "Width", "Gender", "Handedness", "Attack", "Defense", "Speed", "Health", "Magic", "Strength", "Intelligence", "Combo Damage", "Agility", "Eyesight"];
             var items = [];
             for (var row = 0; row < nbFriends; row++) {
@@ -60,6 +58,17 @@
             }
             tbl.appendChild(tbdy);
             body.appendChild(tbl);
+        </script>
+        
+        <p><button onclick="edit()">Edit table</button></p>
+        
+        <script>
+            function edit() {
+                var itemEls = document.getElementsByTagName("input");
+                for (var i = 0; i < itemEls.length; i++) {
+                    itemEls[i].readOnly = false;
+                }
+            }
         </script>
     </body>
 </html>
