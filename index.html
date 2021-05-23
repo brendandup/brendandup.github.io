@@ -20,7 +20,7 @@
         <script>
             var nbFriends = 73;
             var categories = ["ID", "Name", "Height" , "Width", "Gender", "Handedness", "Attack", "Defense", "Speed", "Health", "Magic", "Strength", "Intelligence", "Combo Damage", "Agility", "Eyesight"];
-            if (isNaN(localStorage.getItem("items"))) {
+            if (isNaN(localStorage.getItem("els"))) {
                 console.log("noooooooooooooooooooo");
                 var items = [];
                 for (var row = 0; row < nbFriends; row++) {
@@ -30,7 +30,7 @@
                     }
                 }
             } else {
-                var items = localStorage.getItem("items");
+                var items = localStorage.getItem("els");
             }
             console.log(items);
             console.log(items.length);
