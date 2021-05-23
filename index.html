@@ -23,15 +23,11 @@
         <script>
             var nbFriends = 73;
             var categories = ["ID", "Name", "Height" , "Width", "Gender", "Handedness", "Attack", "Defense", "Speed", "Health", "Magic", "Strength", "Intelligence", "Combo Damage", "Agility", "Eyesight"];
-            if (isNaN(localStorage.getItem("items"))) {
-                var items = Array.from(Array(nbFriends), => new Array(categories.length));
-                console.log(items);
-            } else {
-                var items = localStorage.getItem("items");
-            }
+            var items = [];
+            items[0] = "a";
+            console.log(items);
             
-            
-            var body = document.getElementsByTagName('body')[0];
+            /*var body = document.getElementsByTagName('body')[0];
             var tbl = document.createElement('table');
             
             var thd = document.createElement('thead');
@@ -58,7 +54,7 @@
                 tbdy.appendChild(tr);
             }
             tbl.appendChild(tbdy);
-            body.appendChild(tbl);
+            body.appendChild(tbl);*/
         </script>
     </body>
 </html>
