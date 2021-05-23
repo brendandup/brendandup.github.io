@@ -17,14 +17,19 @@
         </style>
     </head>
     <body>
-        <script>var nbFriends = 73;
+        <script>
+            var nbFriends = 73;
             var categories = ["ID", "Name", "Height" , "Width", "Gender", "Handedness", "Attack", "Defense", "Speed", "Health", "Magic", "Strength", "Intelligence", "Combo Damage", "Agility", "Eyesight"];
-            var items = [];
-            for (var row = 0; row < nbFriends; row++) {
-                items[row] = [];
-                for (var col = 0; col < categories.length; col++) {
-                    items[row][col] = null;
+            if (isNaN(localStorage.getItem("items"))) {
+                var items = [];
+                for (var row = 0; row < nbFriends; row++) {
+                    items[row] = [];
+                    for (var col = 0; col < categories.length; col++) {
+                        items[row][col] = null;
+                    }
                 }
+            } else {
+                var items = localStorage.getItem("items");
             }
             console.log(items);
             console.log(items.length);
