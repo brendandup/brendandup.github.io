@@ -55,7 +55,7 @@
                     var td = document.createElement('td');
                     var input = document.createElement('input');
                     input.readOnly = true;
-                    input.onkeyup = function() {save(row,col)};
+                    input.onkeyup = function() {save(input.value, row, col)};
                     input.value = items[row][col];
                     td.appendChild(input);
                     tr.appendChild(td);
@@ -76,7 +76,8 @@
                 }
             }
             
-            function save(row, col) {
+            function save(value, row, col) {
+                items[row][col] = value;
                 console.log(items);
             }
         </script>
