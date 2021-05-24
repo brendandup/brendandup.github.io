@@ -59,7 +59,7 @@
                     input.className = row, col;
                     input.value = items[i][j];
                     input.readOnly = true;
-                    input.onkeyup = function() {save(input.value, i, j)};
+                    input.onkeyup = function() {save(i, j)};
                     td.appendChild(input);
                     tr.appendChild(td);
                 }
@@ -79,10 +79,10 @@
                 }
             }
             
-            function save(value, row, col) {
+            function save(row, col) {
                 console.log(row);
                 console.log(col);
-                console.log(value);
+                console.log(document.getElementsByClassName(row, col).value);
                 console.log(items);
             }
             
