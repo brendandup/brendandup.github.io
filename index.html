@@ -58,7 +58,7 @@
                     const j = col;
                     input.className = row;
                     input.className += col;
-                    console.log(input.className);
+                    console.log(input.className[0]);
                     input.value = items[i][j];
                     input.readOnly = true;
                     input.onkeyup = function() {save(i, j)};
