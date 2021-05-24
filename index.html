@@ -56,7 +56,8 @@
                     var input = document.createElement('input');
                     const i = row;
                     const j = col;
-                    input.className = row, col;
+                    input.className = row;
+                    input.className += col;
                     console.log(input.className);
                     input.value = items[i][j];
                     input.readOnly = true;
