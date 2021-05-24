@@ -57,6 +57,7 @@
                     const i = row;
                     const j = col;
                     input.className = row, col;
+                    console.log(input.className);
                     input.value = items[i][j];
                     input.readOnly = true;
                     input.onkeyup = function() {save(i, j)};
@@ -86,7 +87,6 @@
                 console.log(items);
             }
             
-            console.log(document.getElementsByTagName("input").className);
         </script>
     </body>
 </html>
