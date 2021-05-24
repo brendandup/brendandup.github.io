@@ -31,9 +31,6 @@
             } else {
                 var items = localStorage.getItem("items");
             }
-            console.log(items);
-            console.log(items.length);
-            console.log(items[0].length);
             
             var body = document.getElementsByTagName('body')[0];
             var tbl = document.createElement('table');
@@ -58,7 +55,7 @@
                     const j = col;
                     input.className = row;
                     input.className += col;
-                    console.log(input.className[0]);
+                    console.log(input.className[1]);
                     input.value = items[i][j];
                     input.readOnly = true;
                     input.onkeyup = function() {save(i, j)};
