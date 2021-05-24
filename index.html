@@ -54,9 +54,10 @@
                 for (var col = 0; col < items[0].length; col++) {
                     var td = document.createElement('td');
                     var input = document.createElement('input');
-                    input.readOnly = true;
-                    input.onkeyup = function() {save(input.value, row, col)};
                     input.value = items[row][col];
+                    input.className = [row, col];
+                    input.readOnly = true;
+                    input.onkeyup = function() {save(input.value, input.className[0], input.className[1])};
                     td.appendChild(input);
                     tr.appendChild(td);
                 }
