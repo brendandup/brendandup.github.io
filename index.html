@@ -56,7 +56,7 @@
                     var input = document.createElement('input');
                     const i = row;
                     const j = col;
-                    input.className = row;
+                    input.className = [row, col];
                     input.value = items[i][j];
                     input.readOnly = true;
                     input.onkeyup = function() {save(input.value, i, j)};
