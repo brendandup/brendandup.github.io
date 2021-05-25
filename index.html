@@ -67,6 +67,7 @@
         </script>
         
         <p><button onclick="edit()">Edit table</button></p>
+        <p><button onclick="erase()">Edit table</button></p>
         
         <script>
             function edit() {
@@ -81,6 +82,10 @@
                 localStorage.setItem("items", JSON.stringify(items));
                 console.log(items);
             }
+            
+            function erase () {
+                localStorage.clear();
+                
         </script>
     </body>
 </html>
