@@ -54,7 +54,6 @@
                     const i = row;
                     const j = col;
                     input.id = row * categories.length + col;
-                    console.log(input.id);
                     input.value = items[i][j];
                     input.readOnly = true;
                     input.onkeyup = function() {save(i, j)};
@@ -78,9 +77,7 @@
             }
             
             function save(row, col) {
-                console.log(row);
-                console.log(col);
-                console.log(document.getElementById(row * categories.length + col).value);
+                items[row][col] = row * categories.length + col).value);
                 console.log(items);
             }
             
