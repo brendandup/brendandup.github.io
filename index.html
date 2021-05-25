@@ -53,9 +53,8 @@
                     var input = document.createElement('input');
                     const i = row;
                     const j = col;
-                    input.className = row.toString();
-                    input.className += col.toString();
-                    console.log(input.className);
+                    input.id = row * categories.length + col;
+                    console.log(input.id);
                     input.value = items[i][j];
                     input.readOnly = true;
                     input.onkeyup = function() {save(i, j)};
