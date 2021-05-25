@@ -78,9 +78,9 @@
             
             function save(row, col) {
                 items[row][col] = document.getElementById(row * categories.length + col).value;
+                localStorage.setItem("items", items);
                 console.log(items);
             }
-            localStorage.clear();
         </script>
     </body>
 </html>
