@@ -29,7 +29,7 @@
                     }
                 }
             } else {
-                var items = localStorage.getItem("items");
+                var items = JSON.parse(localStorage.getItem("items"));
             }
             
             var body = document.getElementsByTagName('body')[0];
@@ -78,7 +78,7 @@
             
             function save(row, col) {
                 items[row][col] = document.getElementById(row * categories.length + col).value;
-                localStorage.setItem("items", items);
+                localStorage.setItem("items", JSON.stringify(items));
                 console.log(items);
             }
         </script>
