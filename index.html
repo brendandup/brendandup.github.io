@@ -50,14 +50,18 @@
                 var tr = document.createElement('tr');
                 for (var col = 0; col < items[0].length; col++) {
                     var td = document.createElement('td');
-                    var input = document.createElement('input');
-                    const i = row;
-                    const j = col;
-                    input.id = row * categories.length + col;
-                    input.value = items[i][j];
-                    input.readOnly = true;
-                    input.onkeyup = function() {save(i, j)};
-                    td.appendChild(input);
+                    if (col === 0) {
+                        td.value = row;
+                    } else {   
+                        var input = document.createElement('input');
+                        const i = row;
+                        const j = col;
+                        input.id = row * categories.length + col;
+                        input.value = items[i][j];
+                        input.readOnly = true;
+                        input.onkeyup = function() {save(i, j)};
+                        td.appendChild(input);
+                    }
                     tr.appendChild(td);
                 }
                 tbdy.appendChild(tr);
