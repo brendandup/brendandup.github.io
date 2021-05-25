@@ -77,10 +77,10 @@
             }
             
             function save(row, col) {
-                items[row][col] = row * categories.length + col.value;
+                items[row][col] = document.getElementById(row * categories.length + col).value;
                 console.log(items);
             }
-            
+            localStorage.clear();
         </script>
     </body>
 </html>
