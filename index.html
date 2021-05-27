@@ -83,14 +83,11 @@
                 var itemEls = document.getElementsByTagName("input");
                 for (var i = 0; i < itemEls.length; i++) {
                     itemEls[i].readOnly = false;
-                    if (itemEls[i].id % categories.length === categories.indexOf("Attack")) {
+                    if (itemEls[i].id % categories.length === categories.indexOf("Attack") || itemEls[i].id % categories.length === categories.indexOf("Defense") || itemEls[i].id % categories.length === categories.indexOf("Speed") || itemEls[i].id % categories.length === categories.indexOf("Health") || itemEls[i].id % categories.length === categories.indexOf("Magic") || itemEls[i].id % categories.length === categories.indexOf("Strength") || itemEls[i].id % categories.length === categories.indexOf("Intelligence") || itemEls[i].id % categories.length === categories.indexOf("Combo Damage") || itemEls[i].id % categories.length === categories.indexOf("Agility") || itemEls[i].id % categories.length === categories.indexOf("Eyesight")) {
                         itemEls[i].type = "number";
                         itemEls[i].min = 0;
                         itemEls[i].max = 100;
                     }
-                console.log(itemEls[i].id);
-                console.log(categories.length);
-                console.log(itemEls[i].id % categories.length);
                 }
             }
             
