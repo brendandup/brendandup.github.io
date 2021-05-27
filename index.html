@@ -25,6 +25,7 @@
         <script>
             var nbFriends = 73;
             var categories = ["ID", "Name", "Height" , "Width", "Gender", "Handedness", "Attack", "Defense", "Speed", "Health", "Magic", "Strength", "Intelligence", "Combo Damage", "Agility", "Eyesight"];
+            var genderOptions = ["Male", "Female", "Other"];
             if (localStorage.getItem("items") === null) {
                 var items = [];
                 for (var row = 0; row < nbFriends; row++) {
@@ -87,6 +88,18 @@
                         itemEls[i].type = "number";
                         itemEls[i].min = 0;
                         itemEls[i].max = 100;
+                    }
+                    if (itemEls[i].id % categories.length === categories.indexOf("Gender")) {
+                        if (itemEls[i].id % categories.length === categories.indexOf("Gender")) {
+                            var len = genderOptions.length;
+                        }
+                        var dl = document.createElement('datalist');
+                        for (var j = 0; j < len; j++) {
+                            var option = document.createElement('option');
+                            option.value = optionList[j];
+                            dl.appendChild(option);
+                        }
+                        itemEls[i].appendChild(dl);
                     }
                 }
             }
