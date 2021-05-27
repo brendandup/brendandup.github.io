@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>test</title>
+        <title>The Friends</title>
         <style>
             table {
                 width: 100%;
@@ -83,11 +83,14 @@
                 var itemEls = document.getElementsByTagName("input");
                 for (var i = 0; i < itemEls.length; i++) {
                     itemEls[i].readOnly = false;
-                    if (itemEls.id % categories.length === categories.indexOf("Attack")) {
+                    if (itemEls[i].id % categories.length === categories.indexOf("Attack")) {
                         input.type = "number";
                         input.min = 0;
                         input.max = 100;
                     }
+                console.log(itemEls[i].id %);
+                console.log(categories.length);
+                console.log(itemEls[i].id % categories.length);
                 }
             }
             
