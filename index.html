@@ -66,6 +66,18 @@
                         input.value = items[i][j];
                         input.readOnly = true;
                         input.onkeyup = function() {save(i, j)};
+                        if (categories[j]] === "Gender") {
+                            if (categories[j] === "Gender") {
+                                var len = genderOptions.length;
+                            }
+                            var dl = document.createElement('datalist');
+                            for (var k = 0; k < len; k++) {
+                                var option = document.createElement('option');
+                                option.value = genderOptions[k];
+                                dl.appendChild(option);
+                            }
+                            input.appendChild(dl);
+                        }
                         td.appendChild(input);
                     }
                     tr.appendChild(td);
@@ -89,18 +101,7 @@
                         itemEls[i].min = 0;
                         itemEls[i].max = 100;
                     }
-                    if (itemEls[i].id % categories.length === categories.indexOf("Gender")) {
-                        if (itemEls[i].id % categories.length === categories.indexOf("Gender")) {
-                            var len = genderOptions.length;
-                        }
-                        var dl = document.createElement('datalist');
-                        for (var j = 0; j < len; j++) {
-                            var option = document.createElement('option');
-                            option.value = genderOptions[j];
-                            dl.appendChild(option);
-                        }
-                        itemEls[i].appendChild(dl);
-                    }
+                    
                 }
             }
             
