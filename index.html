@@ -67,16 +67,14 @@
                         input.readOnly = true;
                         input.onkeyup = function() {save(i, j)};
                         if (categories[j]] === "Gender") {
-                            if (categories[j] === "Gender") {
-                                var len = genderOptions.length;
-                            }
                             var dl = document.createElement('datalist');
-                            for (var k = 0; k < len; k++) {
+                            input.appendChild(dl);
+                            ["Male", "Female", "Other"].forEach(function(data)) {
                                 var option = document.createElement('option');
-                                option.value = genderOptions[k];
+                                option.value = data;
                                 dl.appendChild(option);
                             }
-                            input.appendChild(dl);
+                            input.setAttribute("list", "datalist");
                         }
                         td.appendChild(input);
                     }
