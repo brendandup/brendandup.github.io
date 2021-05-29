@@ -66,7 +66,7 @@
                         input.value = items[i][j];
                         input.readOnly = true;
                         input.onkeyup = function() {save(i, j)};
-                        if (categories[j]] === "Gender") {
+                        if (categories[j]) === "Gender") {
                             var dl = document.createElement('datalist');
                             input.appendChild(dl);
                             ["Male", "Female", "Other"].forEach(function(data)) {
