@@ -69,11 +69,11 @@
                         if (categories[j] === "Gender") {
                             var dl = document.createElement('datalist');
                             input.appendChild(dl);
-                            ["Male", "Female", "Other"].forEach(function(data)) {
+                            ["Male", "Female", "Other"].forEach(function(data) {
                                 var option = document.createElement('option');
                                 option.value = data;
                                 dl.appendChild(option);
-                            }
+                            });
                             input.setAttribute("list", "datalist");
                         }
                         td.appendChild(input);
