@@ -69,7 +69,7 @@
                         if (categories[j] === "Gender") {
                             var datalist = document.createElement('datalist');
                             datalist.id = "datalist";
-                            document.body.appendChild(datalist);
+                            input.appendChild(datalist);
                             ["Seattle", "Las Vegas", "New York", "Salt lake City"].forEach(function(data) {
                               var option = document.createElement('option')
                               option.value = data
