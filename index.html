@@ -69,7 +69,7 @@
                             var datalist = document.createElement('datalist');
                             datalist.id = "datalist";
                             input.appendChild(datalist);
-                            ["Male", "Female", "Other"].forEach(function(data) {
+                            genderOptions.forEach(function(data) {
                               var option = document.createElement('option')
                               option.value = data;
                               datalist.appendChild(option);
