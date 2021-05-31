@@ -26,6 +26,7 @@
             var nbFriends = 73;
             var categories = ["ID", "Name", "Height" , "Width", "Gender", "Handedness", "Attack", "Defense", "Speed", "Health", "Magic", "Strength", "Intelligence", "Combo Damage", "Agility", "Eyesight"];
             var genderOptions = ["Male", "Female", "Other"];
+            var handednessOptions = ["Righty", "Lefty", "Ambidextrous", "None"];
             if (localStorage.getItem("items") === null) {
                 var items = [];
                 for (var row = 0; row < nbFriends; row++) {
@@ -65,11 +66,15 @@
                         input.id = row * categories.length + col;
                         input.value = items[i][j];
                         input.readOnly = true;
-                        if (categories[j] === "Gender") {
+                        if (categories[j] === "Gender" || categories[j] === "Handedness") {
                             var datalist = document.createElement('datalist');
                             datalist.id = "datalist";
                             input.appendChild(datalist);
-                            genderOptions.forEach(function(data) {
+                            if (categories[j] === "Gender") {
+                                var options = genderOptions;
+                            } else {
+                                var options = handednessOptions;
+                            options.forEach(function(data) {
                               var option = document.createElement('option')
                               option.value = data;
                               datalist.appendChild(option);
