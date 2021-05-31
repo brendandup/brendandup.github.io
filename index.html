@@ -68,7 +68,6 @@
                         input.readOnly = true;
                         if (categories[j] === "Gender" || categories[j] === "Handedness") {
                             var datalist = document.createElement('datalist');
-                            datalist.id = "datalist";
                             input.appendChild(datalist);
                             if (categories[j] === "Gender") {
                                 var options = genderOptions;
