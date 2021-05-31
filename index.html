@@ -108,7 +108,7 @@
                 for (var row = 0; row < nbFriends; row++) {
                     for (var col = 0; col < categories.length; col++) {
                         if (col != 0) {
-                            console.log(document.getElementById(row * categories.length + col).value);
+                            items[row][col] = document.getElementById(row * categories.length + col).value;
                         }
                     }
                 }
