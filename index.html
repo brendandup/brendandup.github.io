@@ -107,7 +107,7 @@
             function save() {
                 for (var row = 0; row < nbFriends; row++) {
                     for (var col = 0; col < categories.length; col++) {
-                        cosole.log(document.getElementById(row * categories.length + col).value);
+                        console.log(document.getElementById(row * categories.length + col).value);
                     }
                 }
                 localStorage.setItem("items", JSON.stringify(items));
