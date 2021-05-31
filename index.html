@@ -90,6 +90,7 @@
         
         <p><button onclick="edit()">Edit table</button></p>
         <p><button onclick="erase()">Erase table</button></p>
+        <input id='my-text-box' />
         
         <script>
             function edit() {
@@ -115,6 +116,15 @@
                 localStorage.clear();
             }
             
+            var datalist = document.createElement('datalist');
+            datalist.id = "datalist";
+            document.body.appendChild(datalist);
+            ["Seattle", "Las Vegas", "New York", "Salt lake City"].forEach(function(data) {
+                var option = document.createElement('option')
+                option.value = data
+                datalist.appendChild(option)
+            });
+            document.querySelector('#my-text-box').setAttribute('list', "datalist");
         </script>
     </body>
 </html>
