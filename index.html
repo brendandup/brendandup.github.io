@@ -65,7 +65,6 @@
                         input.id = row * categories.length + col;
                         input.value = items[i][j];
                         input.readOnly = true;
-                        input.onkeyup = function() {save(i, j)};
                         if (categories[j] === "Gender") {
                             var datalist = document.createElement('datalist');
                             datalist.id = "datalist";
@@ -73,7 +72,6 @@
                             ["Male", "Female", "Other"].forEach(function(data) {
                               var option = document.createElement('option')
                               option.value = data;
-                              option.mouseup = function() {save(i, j)};
                               datalist.appendChild(option);
                             });
                             input.setAttribute('list', "datalist");
@@ -90,6 +88,7 @@
         
         <p><button onclick="edit()">Edit table</button></p>
         <p><button onclick="erase()">Erase table</button></p>
+        <p><button onclick="save()">Save table</buttton></p>
         
         <script>
             function edit() {
@@ -105,9 +104,13 @@
                 }
             }
             
-            function save(row, col) {
-                items[row][col] = document.getElementById(row * categories.length + col).value;
-                localStorage.setItem("items", JSON.stringify(items));
+            function save() {
+                for (var row = 0; row < nbFriends; row++) {
+                    for (var col = 0; col < categories.length; col++) {
+                        items[row][col] = document.getElementById(row * categories.length + col).value;
+                        localStorage.setItem("items", JSON.stringify(items));
+                    }
+                }
                 console.log(items);
             }
             
