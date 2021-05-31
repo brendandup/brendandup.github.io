@@ -67,14 +67,14 @@
                         input.readOnly = true;
                         input.onkeyup = function() {save(i, j)};
                         if (categories[j] === "Gender") {
-                            console.log("nooooooooooooooooo!!!!!!!!!!!!!");
                             var datalist = document.createElement('datalist');
                             datalist.id = "datalist";
                             input.appendChild(datalist);
                             ["Male", "Female", "Other"].forEach(function(data) {
                               var option = document.createElement('option')
-                              option.value = data
-                              datalist.appendChild(option)
+                              option.value = data;
+                              option.onclick = function() {save(i, j)};
+                              datalist.appendChild(option);
                             });
                             input.setAttribute('list', "datalist");
                         }
