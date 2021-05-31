@@ -71,7 +71,7 @@
                             var datalist = document.createElement('datalist');
                             datalist.id = "datalist";
                             input.appendChild(datalist);
-                            ["Seattle", "Las Vegas", "New York", "Salt lake City"].forEach(function(data) {
+                            ["Male", "Female", "Other"].forEach(function(data) {
                               var option = document.createElement('option')
                               option.value = data
                               datalist.appendChild(option)
@@ -115,17 +115,6 @@
                 localStorage.clear();
             }
             
-            var input = document.createElement("input");
-            input.id = "my-text-box";
-            document.body.appendChild(input);
-            var datalist = document.createElement('datalist');
-            document.body.appendChild(datalist);
-            ["Seattle", "Las Vegas", "New York", "Salt lake City"].forEach(function(data) {
-                var option = document.createElement('option')
-                option.value = data
-                datalist.appendChild(option)
-            });
-            input.setAttribute('list', "datalist");
         </script>
     </body>
 </html>
