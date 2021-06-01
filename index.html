@@ -66,15 +66,22 @@
                         input.id = row * categories.length + col;
                         input.value = items[i][j];
                         input.readOnly = true;
-                        if (categories[j] === "Gender" || categories[j] === "Handedness") {
+                        if (categories[j] === "Gender") {
                             var datalist = document.createElement('datalist');
+                            datalist.id = "datalist";
                             input.appendChild(datalist);
-                            if (categories[j] === "Gender") {
-                                var options = genderOptions;
-                            } else {
-                                var options = handednessOptions;
-                            }
-                            options.forEach(function(data) {
+                            genderOptions.forEach(function(data) {
+                              var option = document.createElement('option')
+                              option.value = data;
+                              datalist.appendChild(option);
+                            });
+                            input.setAttribute('list', "datalist");
+                        }
+                        if (categories[j] === "Handedness") {
+                            var datalist = document.createElement('datalist');
+                            datalist.id = "datalist";
+                            input.appendChild(datalist);
+                            handednessOptions.forEach(function(data) {
                               var option = document.createElement('option')
                               option.value = data;
                               datalist.appendChild(option);
