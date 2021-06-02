@@ -79,14 +79,14 @@
                         }
                         if (categories[j] === "Handedness") {
                             var datalist = document.createElement('datalist');
-                            datalist.id = "datalist";
+                            datalist.id = "datalist2";
                             input.appendChild(datalist);
                             handednessOptions.forEach(function(data) {
                               var option = document.createElement('option')
                               option.value = data;
                               datalist.appendChild(option);
                             });
-                            input.setAttribute('list', "datalist");
+                            input.setAttribute('list', "datalist2");
                         }
                         td.appendChild(input);
                     }
