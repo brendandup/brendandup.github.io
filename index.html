@@ -25,8 +25,20 @@
         <script>
             var nbFriends = 73;
             var categories = ["ID", "Name", "Height" , "Width", "Gender", "Handedness", "Attack", "Defense", "Speed", "Health", "Magic", "Strength", "Intelligence", "Combo Damage", "Agility", "Eyesight"];
-            var genderOptions = ["Male", "Female", "Other"];
-            var handednessOptions = ["Righty", "Lefty", "Ambidextrous", "None"];
+            var options = {
+                Gender : ["Male", "Female", "Other"],
+                Handedness : ["Righty", "Lefty", "Ambidextrous", "None"]
+            };
+            console.log(options[Name]);
+            console.log(options.length);
+            var datalist = document.createElement('datalist');
+            datalist.id = "datalist";
+            input.appendChild(datalist);
+            genderOptions.forEach(function(data) {
+              var option = document.createElement('option')
+              option.value = data;
+              datalist.appendChild(option);
+            });
             if (localStorage.getItem("items") === null) {
                 var items = [];
                 for (var row = 0; row < nbFriends; row++) {
