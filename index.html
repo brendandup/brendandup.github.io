@@ -29,15 +29,13 @@
                 Gender : ["Male", "Female", "Other"],
                 Handedness : ["Righty", "Lefty", "Ambidextrous", "None"]
             };
-            console.log(options["Name"]);
-            console.log(options.length);
-            var datalist = document.createElement('datalist');
-            datalist.id = "datalist";
+            var genderDatalist = document.createElement('datalist');
+            genderDatalist.id = "genderDatalist";
             input.appendChild(datalist);
-            genderOptions.forEach(function(data) {
-              var option = document.createElement('option')
+            ["Male", "Female", "Other"].forEach(function(data) {
+              var option = document.createElement('option');
               option.value = data;
-              datalist.appendChild(option);
+              genderDatalist.appendChild(option);
             });
             if (localStorage.getItem("items") === null) {
                 var items = [];
@@ -79,26 +77,8 @@
                         input.value = items[i][j];
                         input.readOnly = true;
                         if (categories[j] === "Gender") {
-                            var datalist = document.createElement('datalist');
-                            datalist.id = "datalist";
-                            input.appendChild(datalist);
-                            genderOptions.forEach(function(data) {
-                              var option = document.createElement('option')
-                              option.value = data;
-                              datalist.appendChild(option);
-                            });
-                            input.setAttribute('list', "datalist");
-                        }
-                        if (categories[j] === "Handedness") {
-                            var datalist = document.createElement('datalist');
-                            datalist.id = "datalist2";
-                            input.appendChild(datalist);
-                            handednessOptions.forEach(function(data) {
-                              var option = document.createElement('option')
-                              option.value = data;
-                              datalist.appendChild(option);
-                            });
-                            input.setAttribute('list', "datalist2");
+                            input.appendChild(genderDatalist);
+                            input.setAttribute('list', "genderDatalist");
                         }
                         td.appendChild(input);
                     }
