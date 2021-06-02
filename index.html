@@ -24,7 +24,22 @@
     <body>
         <script>
             var nbFriends = 73;
-            var categories = ["ID", "Name", "Height" , "Width", "Gender", "Handedness", "Attack", "Defense", "Speed", "Health", "Magic", "Strength", "Intelligence", "Combo Damage", "Agility", "Eyesight"];
+            var categories = [{name : "Name", type : "text", appearence : "show", options : []},
+                              {name : "Height", type : "number", min : null, max : null, appearence : "hide", options : []},
+                              {name : "Width", type : "text", appearence : "hide", options : []},
+                              {name : "Gender", type : "text", appearence : "hide", options : ["Male", "Female", "Other"]},
+                              {name : "Handedness", type : "text", appearence : "hide", options : ["Righty", "Lefty", "Ambidextrous", "None"]},
+                              {name : "Attack", type : "text", appearence : "show", options : []},
+                              {name : "Defense", type : "text", appearence : "show", options : []},
+                              {name : "Speed", type : "text", appearence : "show", options : []},
+                              {name : "Health", type : "text", appearence : "show", options : []},
+                              {name : "Magic", type : "text", appearence : "show", options : []},
+                              {name : "Strength", type : "text", appearence : "show", options : []},
+                              {name : "Intelligence", type : "text", appearence : "show", options : []},
+                              {name : "Combo Damage", type : "text", appearence : "show", options : []},
+                              {name : "Agility", type : "text", appearence : "show", options : []},
+                              {name : "Eyesight", type : "text", appearence : "hide", options : []}
+                              ];
             var options = {
                 Gender : ["Male", "Female", "Other"],
                 Handedness : ["Righty", "Lefty", "Ambidextrous", "None"]
