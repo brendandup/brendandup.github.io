@@ -44,7 +44,7 @@
             var datalists = [];
             for (var i = 0; i < categories.length; i++) {
                 var datalist = document.createElement('datalist');
-                datalists[i].id = categories[i]["name"] + "-datalist";
+                datalists[i].id = categories[i]["name"];
                 categories[i]["options"].forEach(function(data) {
                   var option = document.createElement('option');
                   option.value = data;
@@ -90,7 +90,7 @@
                     input.value = items[i][j];
                     input.readOnly = true;
                     input.appendChild(datalists[col]);
-                    input.setAttribute("list", categories[col]["name"] + "-datalist");
+                    input.setAttribute("list", categories[col]["name"]);
                     tr.appendChild(td);
                 }
                 tbdy.appendChild(tr);
