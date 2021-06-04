@@ -90,7 +90,7 @@
                     input.value = items[i][j];
                     input.readOnly = true;
                     input.appendChild(datalists[col]);
-                    input.setAttribute('list
+                    input.setAttribute("list", categories[col]["name"] + "-datalist");
                     tr.appendChild(td);
                 }
                 tbdy.appendChild(tr);
