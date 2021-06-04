@@ -44,9 +44,7 @@
             var datalists = [];
             for (var i = 0; i < categories.length; i++) {
                 datalists[i] = document.createElement('datalist');
-                console.log(categories[i]);
-                console.log(categories[i]["name"]);
-                datalists[i].id = categories[i]["name"];
+                datalists[i].id = categories[i]["name"] + "-datalist";
                 categories[i]["options"].forEach(function(data) {
                   var option = document.createElement('option');
                   option.value = data;
@@ -73,7 +71,7 @@
             var tr = document.createElement('tr');
             for (var col = 0; col < categories.length; col++) {
                 var th = document.createElement('th');
-                th.appendChild(document.innerHTML(categories[col]["name"]));
+                th.appendChild(document.innerHTML = categories[col]["name"]);
                 tr.appendChild(th);
             }
             thd.appendChild(tr);
@@ -92,7 +90,7 @@
                     input.value = items[i][j];
                     input.readOnly = true;
                     input.appendChild(datalists[col]);
-                    input.setAttribute("list", categories[col]["name"]);
+                    input.setAttribute("list", categories[col]["name"] + "-datalist");
                     tr.appendChild(td);
                 }
                 tbdy.appendChild(tr);
