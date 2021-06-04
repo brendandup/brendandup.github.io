@@ -44,6 +44,7 @@
             var datalists = [];
             for (var i = 0; i < categories.length; i++) {
                 var datalist = document.createElement('datalist');
+                console.log(categories[i]);
                 datalists[i].id = categories[i]["name"];
                 categories[i]["options"].forEach(function(data) {
                   var option = document.createElement('option');
