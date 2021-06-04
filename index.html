@@ -71,7 +71,7 @@
             var tr = document.createElement('tr');
             for (var col = 0; col < categories.length; col++) {
                 var th = document.createElement('th');
-                th.appendChild(document.innerHTML = categories[col]["name"]);
+                th.appendChild(document.createTextNode(categories[col]["name"]));
                 tr.appendChild(th);
             }
             thd.appendChild(tr);
@@ -80,7 +80,7 @@
             var tbdy = document.createElement('tbody');
             for (var row = 0; row < nbFriends; row++) {
                 var tr = document.createElement('tr');
-                tr.appendChild(document.createElement('td').innerHTML = row  + 1);
+                tr.appendChild(document.createElement('td').createTextNode(row  + 1));
                 for (var col = 0; col < categories.length; col++) {
                     var td = document.createElement('td');
                     var input = document.createElement('input');
