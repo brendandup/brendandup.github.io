@@ -80,7 +80,7 @@
             var tbdy = document.createElement('tbody');
             for (var row = 0; row < nbFriends; row++) {
                 var tr = document.createElement('tr');
-                tr.appendChild(document.createElement('td').document.innerHTML = row  + 1);
+                tr.appendChild(document.createElement('td').appendChild(document.createTextNode(row  + 1)).parentNode);
                 for (var col = 0; col < categories.length; col++) {
                     var td = document.createElement('td');
                     var input = document.createElement('input');
