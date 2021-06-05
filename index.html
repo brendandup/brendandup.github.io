@@ -69,6 +69,7 @@
             
             var thd = document.createElement('thead');
             var tr = document.createElement('tr');
+            tr.appendChild(document.createElement('th').appendChild(document.createTextNode("ID")).parentNode);
             for (var col = 0; col < categories.length; col++) {
                 tr.appendChild(document.createElement('th').appendChild(document.createTextNode(categories[col]["name"])).parentNode);
             }
