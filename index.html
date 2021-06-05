@@ -70,7 +70,7 @@
             var thd = document.createElement('thead');
             var tr = document.createElement('tr');
             for (var col = 0; col < categories.length; col++) {
-                tr.appendChild(document.createElement('th').appendChild(document.createTextNode(categories[col]["name"])));
+                tr.appendChild(document.createElement('th').appendChild(document.createTextNode(categories[col]["name"])).parentNode);
             }
             thd.appendChild(tr);
             tbl.appendChild(thd);
