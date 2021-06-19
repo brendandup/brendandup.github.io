@@ -24,21 +24,21 @@
     <body>
         <script>
             var nbFriends = 73;
-            var categories = [{name : "Name", type : "text", appearence : "show", options : []},
-                              {name : "Height", type : "number", min : null, max : null, appearence : "hide", options : []},
-                              {name : "Width", type : "text", appearence : "hide", options : []},
+            var categories = [{name : "Name", type : "text", appearence : "show"},
+                              {name : "Height", type : "number", min : 0, max : 100, appearence : "hide", options : []},
+                              {name : "Width", type : "number", min : 0, max : 100, appearence : "hide",},
                               {name : "Gender", type : "text", appearence : "hide", options : ["Male", "Female", "Other"]},
                               {name : "Handedness", type : "text", appearence : "hide", options : ["Righty", "Lefty", "Ambidextrous", "None"]},
-                              {name : "Attack", type : "text", appearence : "show", options : []},
-                              {name : "Defense", type : "text", appearence : "show", options : []},
-                              {name : "Speed", type : "text", appearence : "show", options : []},
-                              {name : "Health", type : "text", appearence : "show", options : []},
-                              {name : "Magic", type : "text", appearence : "show", options : []},
-                              {name : "Strength", type : "text", appearence : "show", options : []},
-                              {name : "Intelligence", type : "text", appearence : "show", options : []},
-                              {name : "Combo Damage", type : "text", appearence : "show", options : []},
-                              {name : "Agility", type : "text", appearence : "show", options : []},
-                              {name : "Eyesight", type : "text", appearence : "hide", options : []}
+                              {name : "Attack", type : "number", min : 0, max : 100, appearence : "show"},
+                              {name : "Defense", type : "number", min : 0, max : 100, appearence : "show"},
+                              {name : "Speed", type : "number", min : 0, max : 100, appearence : "show"},
+                              {name : "Health", type : "number", min : 0, max : 100, appearence : "show"},
+                              {name : "Magic", type : "number", min : 0, max : 100, appearence : "show"},
+                              {name : "Strength", type : "number", min : 0, max : 100, appearence : "show"},
+                              {name : "Intelligence", type : "number", min : 0, max : 100, appearence : "show"},
+                              {name : "Combo Damage", type : "number", min : 0, max : 100, appearence : "show"},
+                              {name : "Agility", type : "number", min : 0, max : 100, appearence : "show"},
+                              {name : "Eyesight", type : "number", min : 0, max : 100, appearence : "hide"}
                               ];
             
             var datalists = [];
