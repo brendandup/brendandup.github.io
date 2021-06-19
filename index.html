@@ -90,12 +90,12 @@
                     input.id = row * categories.length + col;
                     input.value = items[i][j];
                     input.readOnly = true;
-                    if (categories[i]["options"]) {
+                    if (categories[col]["options"]) {
                         input.appendChild(datalists[col]);
                         input.setAttribute("list", categories[col]["name"] + "-datalist");
-                        td.appendChild(input);
-                        tr.appendChild(td);
                     }
+                    td.appendChild(input);
+                    tr.appendChild(td);
                 }
                 tbdy.appendChild(tr);
             }
