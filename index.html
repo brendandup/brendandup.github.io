@@ -87,7 +87,7 @@
                     const j = col;
                     input.id = row * categories.length + col;
                     input.value = items[i][j];
-                    input.readOnly = true;
+                    //input.readOnly = true;
                     input.appendChild(datalists[col]);
                     input.setAttribute("list", categories[col]["name"] + "-datalist");
                     tr.appendChild(td);
