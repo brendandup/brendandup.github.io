@@ -88,10 +88,6 @@
                     input.id = row * categories.length + col;
                     input.value = items[i][j];
                     input.readOnly = true;
-                    if (categories[col]["options"]) {
-                        input.appendChild(datalists[col]);
-                        input.setAttribute("list", categories[col]["name"] + "-datalist");
-                    }
                     td.appendChild(input);
                     tr.appendChild(td);
                 }
@@ -113,6 +109,10 @@
                     itemEls[i].type = categories[itemEls[i].id % categories.length]["type"];
                     itemEls[i].min = categories[itemEls[i].id % categories.length]["min"];
                     itemEls[i].max = categories[itemEls[i].id % categories.length]["max"];
+                    if (categories[itemEls[i].id % categories.length]["options"]) {
+                        itemEls[i].appendChild(datalists[itemEls[i].id % categories.length]);
+                        itemEls[i].setAttribute("list", categories[itemEls[i].id % categories.length]["name"] + "-datalist");
+                    }
                 }
             }
             
