@@ -43,13 +43,15 @@
             
             var datalists = [];
             for (var i = 0; i < categories.length; i++) {
-                datalists[i] = document.createElement('datalist');
-                datalists[i].id = categories[i]["name"] + "-datalist";
-                categories[i]["options"].forEach(function(data) {
-                  var option = document.createElement('option');
-                  option.value = data;
-                  datalists[i].appendChild(option);
-                });
+                if categories[i]["options"] :
+                    datalists[i] = document.createElement('datalist');
+                    datalists[i].id = categories[i]["name"] + "-datalist";
+                    categories[i]["options"].forEach(function(data) {
+                      var option = document.createElement('option');
+                      option.value = data;
+                      datalists[i].appendChild(option);
+                    });
+            }
             }
             
             if (localStorage.getItem("items") === null) {
