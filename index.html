@@ -91,7 +91,7 @@
                     const i = row;
                     const j = col;
                     /*input*/td.id = row * categories.length + col;
-                    /*input*/td.value = items[i][j];
+                    /*input*/td.innerHTML/*value*/ = items[i][j];
                     //input.readOnly = true;
                     //td.appendChild(input);
                     tr.appendChild(td);
