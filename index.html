@@ -87,13 +87,13 @@
                 tr.appendChild(document.createElement('td').appendChild(document.createTextNode(row  + 1)).parentNode);
                 for (var col = 0; col < categories.length; col++) {
                     var td = document.createElement('td');
-                    var input = document.createElement('input');
+                    //var input = document.createElement('input');
                     const i = row;
                     const j = col;
-                    input.id = row * categories.length + col;
-                    input.value = items[i][j];
-                    input.readOnly = true;
-                    td.appendChild(input);
+                    /*input*/td.id = row * categories.length + col;
+                    /*input*/td.value = items[i][j];
+                    //input.readOnly = true;
+                    //td.appendChild(input);
                     tr.appendChild(td);
                 }
                 tbdy.appendChild(tr);
