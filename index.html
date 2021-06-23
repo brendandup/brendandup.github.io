@@ -91,7 +91,7 @@
                     const i = row;
                     const j = col;
                     /*input*/td.id = row * categories.length + col;
-                    if (items[i][j]) {
+                    try {
                        /*input*/td.innerHTML/*value*/ = items[i][j];
                     }
                     //input.readOnly = true;
